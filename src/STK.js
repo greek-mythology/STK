@@ -4,7 +4,7 @@ if(!STK) {
 
         var _this = {};
 
-        _this.define = function(ns, maker) {
+        _this.define = function(namespace, maker) {
             var NSList = ns.split('.');
             var step = _this;
             var k = null;
@@ -24,7 +24,7 @@ if(!STK) {
         };
 
         _this.clazz = function(namespace) {
-            var NSList = ns.split('.');
+            var NSList = namespace.split('.');
             var step = _this;
             var k = null;
             while(k = NSList.shift()){
@@ -36,8 +36,8 @@ if(!STK) {
             return step;
         };
 
-        _this.extend = function(ns, proto) {
-            var clazz = _this.clazz(ns);
+        _this.extend = function(namespace, proto) {
+            var clazz = _this.clazz(namespace);
             var obj = Object.create(clazz.prototype);
             if(proto) {
                 for(var funcName in proto) {
