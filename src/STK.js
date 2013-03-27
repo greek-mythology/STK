@@ -47,6 +47,8 @@ if(!STK) {
             return obj;
         };
 
+        return _this;
+
     })();
 
 }
